@@ -1,9 +1,9 @@
 import pytest
 import requests
-from mymodule import get_pubchem_cid
+from mymodule import get_cid
 
-def test_get_pubchem_cid():
-    session = requests.Session()
-    ingredient_name = "Aspirin"
-    cid = get_pubchem_cid(session, ingredient_name)
-    assert cid == "2244", "Il CID per l'Aspirina dovrebbe essere '2244'"
+def test_cid_retrieval():
+    sess = requests.Session()
+    compound = "Aspirin"
+    result_cid = get_cid(sess, compound)
+    assert result_cid == "2244", "Il CID per l'Aspirina dovrebbe essere '2244'"
